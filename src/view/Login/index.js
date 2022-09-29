@@ -28,10 +28,12 @@ const Index = () => {
     }
 
     useEffect(() => {
-        if (user.status == 200) {
-            localStorage.setItem('token', user?.token ?? '')
-            navigate('/home')
-        } else toast.error("Elektron pochta yoki parol noto'g'ri")
+        if (user) {
+            if (user.status == 200) {
+                localStorage.setItem('token', user?.token ?? '')
+                navigate('/home')
+            } else toast.error("Elektron pochta yoki parol noto'g'ri")
+        }
     }, [user])
 
     return (
