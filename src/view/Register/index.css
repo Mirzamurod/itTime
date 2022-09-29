@@ -1,0 +1,74 @@
+.PhoneInput {
+    padding: 0.3rem 0.5rem;
+    border: 2px solid #673ab7;
+    border-radius: 12px;
+}
+
+.PhoneInputInput {
+    outline: none;
+    border: none;
+}
+
+.input-group-text {
+    background-color: transparent !important;
+}
+
+.input-group {
+    border: 2px solid #673ab7 !important;
+    border-radius: 12px !important;
+}
+
+.error {
+    border: 2px solid red !important;
+}
+
+.input-group-text,
+.form-control {
+    border: none !important;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+    border-radius: 12px !important;
+}
+
+.form-control {
+    border-radius: 12px !important;
+}
+
+i,
+.register > h2 {
+    color: #673ab7;
+}
+
+.register a {
+    color: #673ab7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register > p {
+    font-size: 14px;
+}
+
+.register button {
+    background: linear-gradient(180deg, #673ab7, #512da8);
+    border-radius: 12px;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.position {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-register {
+    font-size: 14px;
+}
+
+.forget-password {
+    font-size: 12px;
+}
