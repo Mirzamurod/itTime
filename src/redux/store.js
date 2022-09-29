@@ -1,9 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 import middleware from './middleware'
-import register from './register'
-import login from './login'
+import { register, login, forgotPassword } from '.'
 
 export default configureStore({
-    reducer: { login, register },
+    reducer: { login, register, forgotPassword },
     middleware: [middleware],
 })
