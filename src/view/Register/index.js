@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import First from './First'
 import Second from './Second'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { userRegister } from '../../redux'
 import { useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
@@ -10,7 +10,7 @@ import { Col, Row } from 'reactstrap'
 
 function Index({ step }) {
     const dispatch = useDispatch()
-    const history = useNavigate()
+    const navigate = useNavigate()
 
     const [fullName, setFullName] = useState(null)
     const [phone, setPhone] = useState(null)
@@ -18,9 +18,11 @@ function Index({ step }) {
     const [userName, setUserName] = useState(null)
     const [email, setEmail] = useState(null)
 
+    const { register } = useSelector(state => state.register)
+
     function submit() {
         if (!fullName || !phone) {
-            history('/register')
+            navigate('/register')
             toast.error("Majburiy to'ldirish")
         } else {
             dispatch(
@@ -29,6 +31,12 @@ function Index({ step }) {
             toast.success('Success')
         }
     }
+
+    useEffect(() => {
+        if (register) {
+            if (register.status == 200) navigate('/login')
+        }
+    }, [register])
 
     return (
         <Row>

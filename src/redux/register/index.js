@@ -5,6 +5,7 @@ const register = createSlice({
     name: 'register',
     initialState: {
         isLoading: false,
+        register: '',
         isError: false,
     },
     reducers: {
@@ -14,6 +15,7 @@ const register = createSlice({
         },
         onSuccess: (state, { payload }) => {
             state.isLoading = false
+            state.register = payload
         },
         onFail: (state, { payload }) => {
             state.isLoading = false
